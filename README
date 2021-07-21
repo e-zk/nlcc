@@ -22,9 +22,21 @@ where:
     -n nonce_file    file to read nonce from
     -a ad            string of associated data
     -m message       message to encrypt
-    -d ciphertext    ciphertext to decrypt
+    -d ciphertext    ciphertext hex digest to decrypt
+
+* outputs are hex encoded and are tailed with the output size (in bits)
+* plaintext contains a decoded representation in quotations
+* example output:
+      $ ./nlcc -k ./file -m "testing message" -a "adadadadad"
+      Key   = ffffffffffffffffffffffffffffffff (128)
+      Nonce = 000000000000000000000000 (96)
+      AD    = 61646164616461646164 (80)
+      PT    = 74657374696e67206d657373616765 ("testing message") (120)
+      CT    = 87e649bf2c3e6c83cbb1ee7120c419a1f58b03b0386258
 
  todo
 ------
 * encrypt/decrypt from stdin/stdout
+* load associated data from file
+* better command-line flags
 * script to download and compile every competition entry into a CLI tool
