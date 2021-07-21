@@ -2,6 +2,12 @@
 ======
 use any of the NIST lightweight crypto algorithm entries as a CLI tool
 
+ warning
+---------
+! this tool can be accurately described as a 'toy'
+! it is not designed to be secure
+! do not use this for securing any sensitive information
+
  deps
 ------
 * libsodium
