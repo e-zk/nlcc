@@ -34,8 +34,8 @@ char msg_digest[(MAX_MSG_LEN*2)+1];
 char ad_digest[(MAX_AD_LEN*2)+1];
 char ct_digest[((MAX_MSG_LEN + CRYPTO_ABYTES)*2)+1];
 
-void usage(void);
 int init(void);
+void usage(void);
 void cleanup(void);
 void init_key(unsigned char *buf, unsigned long long n);
 
@@ -56,8 +56,9 @@ int init(void)
 	// zero all buffers
 	sodium_memzero(key,   sizeof(key));
 	sodium_memzero(nonce, sizeof(nonce));
-	sodium_memzero(msg,   sizeof(msg));
 	sodium_memzero(ad,    sizeof(ad));
+	sodium_memzero(msg,   sizeof(msg));
+	sodium_memzero(ct,    sizeof(ct));
 
 	return 0;
 }
@@ -181,6 +182,7 @@ void init_key(unsigned char *buf, unsigned long long n) {
 void cleanup(void) {
 	sodium_memzero(key,   sizeof(key));
 	sodium_memzero(nonce, sizeof(nonce));
-	sodium_memzero(msg,   sizeof(msg));
 	sodium_memzero(ad,    sizeof(ad));
+	sodium_memzero(msg,   sizeof(msg));
+	sodium_memzero(ct,    sizeof(ct));
 }
