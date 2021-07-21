@@ -1,8 +1,8 @@
 // requires: 
-//  - libsodium headers installed
-//  - crypto_aead.h, api.h (from NIST competition website)
-//  - encrypt.c of cipher you wish to turn into a CLI
-// usage: ./nlcc [-m message] [-a associated_data] [-n nonce] [-k keyfile]
+//   - libsodium headers installed
+//   - api.h, encrypt.c of cipher you wish to turn into a CLI
+// usage:
+//   nlcc [-h] [-k key_file] [-n nonce_file] [-a ad] [-m message|-d ciphertext]
 
 #include <err.h>
 #include <stdio.h>
