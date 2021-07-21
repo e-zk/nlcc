@@ -1,20 +1,17 @@
  nlcc
 ======
-use any of the NIST leightweight crypto algorithm entries via a CLI
-
+use any of the NIST leightweight crypto algorithm entries as a CLI tool
 
  deps
 ------
 * libsodium
 * api.h, encrypt.c from an algorithm's source
 
-
  building
 ----------
 * copy api.h, and encrypt.c from your chosen algorithm's source to the repo
   root
 * run `make`
-
 
  usage
 -------
@@ -27,3 +24,7 @@ where:
     -m message       message to encrypt
     -d ciphertext    ciphertext to decrypt
 
+ todo
+------
+* encrypt/decrypt from stdin/stdout
+* script to download and compile every competition entry into a CLI tool
