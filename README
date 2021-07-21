@@ -1,0 +1,29 @@
+ nlcc
+======
+use any of the NIST leightweight crypto algorithm entries via a CLI
+
+
+ deps
+------
+* libsodium
+* api.h, encrypt.c from an algorithm's source
+
+
+ building
+----------
+* copy api.h, and encrypt.c from your chosen algorithm's source to the repo
+  root
+* run `make`
+
+
+ usage
+-------
+nlcc [-h] [-k key_file] [-n nonce_file] [-a ad] [-m message|-d ciphertext]
+where:
+    -h               shows help
+    -k key_file      file to read key from
+    -n nonce_file    file to read nonce from
+    -a ad            string of associated data
+    -m message       message to encrypt
+    -d ciphertext    ciphertext to decrypt
+
