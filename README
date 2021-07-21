@@ -32,13 +32,26 @@ where:
 
 * outputs are hex encoded and are tailed with the output size (in bits)
 * plaintext contains a decoded representation in quotations
-* example output:
-      $ ./nlcc -k ./file -m "testing message" -a "adadadadad"
-      Key   = ffffffffffffffffffffffffffffffff (128)
-      Nonce = 000000000000000000000000 (96)
-      AD    = 61646164616461646164 (80)
-      PT    = 74657374696e67206d657373616765 ("testing message") (120)
-      CT    = 87e649bf2c3e6c83cbb1ee7120c419a1f58b03b0386258
+
+ examples
+---------
+encryption:
+
+    $ ./nlcc -k ./file -m "testing message" -a "adadadadad"
+    Key   = ffffffffffffffffffffffffffffffff (128)
+    Nonce = 000000000000000000000000 (96)
+    AD    = 61646164616461646164 (80)
+    PT    = 74657374696e67206d657373616765 ("testing message") (120)
+    CT    = 87e649bf2c3e6c83cbb1ee7120c419a1f58b03b0386258
+
+decryption of above ciphertext digest (same key, same ad):
+
+    $ ./nlcc -k ./file -a "adadadadad" -d "87e649bf2c3e6c83cbb1ee7120c419a1f58b03b0386258"
+    Key   = ffffffffffffffffffffffffffffffff (128)
+    Nonce = 000000000000000000000000 (96)
+    AD    = 61646164616461646164 (80)
+    CT    = 87e649bf2c3e6c83cbb1ee7120c419a1f58b03b0386258 (184)
+    PT    = 74657374696e67206d657373616765 ("testing message") (120)
 
  todo
 ------
