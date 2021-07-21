@@ -34,7 +34,7 @@ where:
 * plaintext contains a decoded representation in quotations
 
  examples
----------
+----------
 encryption:
 
     $ ./nlcc -k ./file -m "testing message" -a "adadadadad"
@@ -55,7 +55,7 @@ decryption of above ciphertext digest (same key, same ad):
 
  todo
 ------
-* encrypt/decrypt from stdin/stdout
-* load associated data from file
-* better command-line flags
-* script to download and compile every competition entry into a CLI tool
+• encrypt/decrypt from stdin/stdout
+• load associated data from file
+• better command-line flags
+• script to download and compile every competition entry into a CLI tool
